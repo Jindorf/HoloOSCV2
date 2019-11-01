@@ -42,4 +42,12 @@ public class SourceHandler : MonoBehaviour
         //Destroy() the targeted Source 
     }
 
+    public void UpdateSources() {
+        for (int i=0; i< numberOfObjects; i++ ) {
+            GameObject src = sources[i] as GameObject;
+            src.GetComponent<SourceObject>().sendMessageToOSCHandler();
+        }
+    }
+
+
 }
