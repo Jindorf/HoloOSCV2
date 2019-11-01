@@ -11,6 +11,12 @@ public class SourceHandler : MonoBehaviour
     float sourceRadius;
     float shellRadius;
 
+
+    OSCOutput output;
+    GameObject handler;
+    const string inputChannelNumber = "/MultiEncoder/inputSetting";
+
+
     [SerializeField]
     private float numberOfObjects = 5;
 
@@ -18,6 +24,8 @@ public class SourceHandler : MonoBehaviour
        sourceRadius = source.GetComponent<SphereCollider>().radius;
        shellRadius = shell.GetComponent<SphereCollider>().radius;
         InstantiateObjects();
+        handler = GameObject.FindGameObjectWithTag("OSCHandler");
+        output = handler.GetComponent<OSCOutput>();
     }
 
     //Insantiates numberOfObjects Sources evenly around shell
@@ -43,6 +51,12 @@ public class SourceHandler : MonoBehaviour
     }
 
     public void UpdateSources() {
+        string[] data = new string[2];
+
+        data[0] = inputChannelNumber;
+        data[1] = numberOfObjects.ToString();
+        output.SendMessage("SendOSCMessageToClient", data);
+
         for (int i=0; i< numberOfObjects; i++ ) {
             GameObject src = sources[i] as GameObject;
             src.GetComponent<SourceObject>().sendMessageToOSCHandler();
