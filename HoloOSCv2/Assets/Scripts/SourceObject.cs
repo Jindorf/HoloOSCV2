@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Microsoft.MixedReality.Toolkit.UI;
+using UnityEngine;
 
 public class SourceObject : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class SourceObject : MonoBehaviour
     Transform trans;
     GameObject handler;
     OSCOutput output;
+    ToolTip toolTip;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +18,9 @@ public class SourceObject : MonoBehaviour
         trans = GetComponent<Transform>().transform;
         handler = GameObject.FindGameObjectWithTag("OSCHandler");
         output = handler.GetComponent<OSCOutput>();
+
+        toolTip = GetComponent<ToolTip>();
+        toolTip.ToolTipText = "Source "+(id+1);
     }
     public float  GetElevation() {
         Vector3 eulerAngles = transform.rotation.eulerAngles;

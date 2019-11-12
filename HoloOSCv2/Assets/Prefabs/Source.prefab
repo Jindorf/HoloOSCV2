@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7334350883660208544}
   - component: {fileID: -8911311746996985716}
   - component: {fileID: -6888926951446379932}
+  - component: {fileID: -1617458964249379741}
   m_Layer: 0
   m_Name: Source
   m_TagString: Source
@@ -211,3 +212,33 @@ MonoBehaviour:
   useFixedVerticalPosition: 0
   fixedVerticalPosition: -0.4
   orientToReferenceDirection: 0
+--- !u!114 &-1617458964249379741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7334350883660208545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85b0e186e2c82324b83f3696c29cf697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showBackground: 1
+  showHighlight: 0
+  showConnector: 1
+  tipState: 1
+  groupTipState: 0
+  masterTipState: 0
+  anchor: {fileID: 0}
+  pivot: {fileID: 0}
+  label: {fileID: 0}
+  contentParent: {fileID: 0}
+  toolTipText: SourceName
+  backgroundPadding: {x: 0, y: 0}
+  backgroundOffset: {x: 0, y: 0, z: 0}
+  contentScale: 1
+  fontSize: 30
+  attachPointType: 9
+  attachPointOffset: {x: 0, y: 0, z: 0}
+  toolTipLine: {fileID: 0}
