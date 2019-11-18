@@ -303,6 +303,8 @@ GameObject:
   - component: {fileID: 451885515}
   - component: {fileID: 451885516}
   - component: {fileID: 451885517}
+  - component: {fileID: 451885518}
+  - component: {fileID: 451885519}
   m_Layer: 0
   m_Name: OSCHandler
   m_TagString: OSCHandler
@@ -367,6 +369,48 @@ MonoBehaviour:
   _splitBundlesAvoidingBufferOverflow: 1
   _settingsFoldout: 0
   _messagesFoldout: 0
+--- !u!114 &451885518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451885514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b64988e220a2942f9856e0017b596ba8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _openOnAwake: 0
+  _udpBufferSize: 8192
+  _inspectorMessageEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: OscSimpl.OscMessageEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  _port: 7000
+  _mode: 0
+  _multicastAddress: 
+  _filterDuplicates: 1
+  _addTimeTagsToBundledMessages: 0
+  _dirtyMappings: 1
+  _mappings: []
+  _settingsFoldout: 0
+  _mappingsFoldout: 0
+  _messagesFoldout: 0
+--- !u!114 &451885519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451885514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94c48a0d59d351349adba09d3cb20df3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oscIn: {fileID: 451885518}
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
