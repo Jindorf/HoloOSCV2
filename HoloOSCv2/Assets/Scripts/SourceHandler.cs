@@ -16,6 +16,8 @@ public class SourceHandler : MonoBehaviour
     GameObject handler;
     const string inputChannelNumber = "/MultiEncoder/inputSetting";
 
+    [SerializeField]
+    private OSCMessageConverter message;
 
     [SerializeField]
     private float numberOfObjects = 5;
@@ -61,6 +63,24 @@ public class SourceHandler : MonoBehaviour
             GameObject src = sources[i] as GameObject;
             src.GetComponent<SourceObject>().sendMessageToOSCHandler();
         }
+    }
+
+    public void UpdateThroughReaper(OscMessage oscm)
+    {
+        message.extractFromMessage(oscm);
+
+        GameObject src = sources[message.GetSourceNumber()] as GameObject;
+      
+        if (message.GetCommandString() == "azimuth") {
+            src.GetComponent<SourceObject>().setAzimuth(message.GetValue());
+        }
+        if (message.GetCommandString() == "elevation"){
+            src.GetComponent<SourceObject>().setElevation(message.GetValue());
+        }
+    }
+
+    public int getCount() {
+        return (int)numberOfObjects;
     }
 
 
